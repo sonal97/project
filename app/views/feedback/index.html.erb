@@ -1,0 +1,125 @@
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> CONTACT US </title>
+
+		<style>
+			#pic
+			{
+			background: url(/assets/contact.jpg);
+			background-repeat: no-repeat, repeat;
+			padding: 15px;
+			background-size:cover;
+			}
+
+			a:link
+			{
+			text-decoration:none;
+			color:white;
+			font-family:Comic Sans MS;
+			}
+
+			a:hover
+			{
+			color:black;
+			font-family:Comic Sans MS;
+			}
+
+			a:visited
+			{
+			color:white;
+			font-family:Comic Sans MS;
+			}
+
+			#heading
+			{
+			font-family: Papyrus, fantasy;
+			margin-right:1200px;
+			}
+
+			input[type=text], select
+			{
+			width: 50%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			}
+
+			input[type=submit]
+			{
+			width: 50%;
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			}
+
+			input[type=submit]:hover
+			{
+			background-color: #45a049;
+			}
+
+			div
+			{
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<%= form_for :home do |f| %>
+		<div id="top" style="text-align:right;font-size:140%;background-color:#587CE5;padding:15px">
+			<a id="heading" style="color:white;font-size:180%"><b>JOBHUNT</b></a>
+			<%= link_to "HOME",{:action=>'index', :controller=>'home'} %>|
+			<%= link_to "REGISTER",{:action=>'new', :controller=>'users'} %>|
+			<%= link_to "LOGIN",{:action=>'index', :controller=>'login'} %>|
+			<%= link_to "CONTACT",{:action=>'index', :controller=>'feedback'} %>
+		</div>
+
+
+		<div id="pic" style="height:935px;width:1302px;text-align:right;">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+					<p style="text-align:left;font-size:220%;font-family:Comic Sans MS;">
+					<b> <i> FEEDBACK: </i> </b>
+					</p>
+
+					<p style="text-align:left;font-size:130%;font-family:Comic Sans MS;">
+					If you have any problems, or would just like to give us any feedback, please comment below...
+					</p>
+
+		<div style="float:left;text-align:left;height:200px;width:400px">
+						<%= f.label :comment, "Comment" %>
+						<br>
+						<%= f.text_field :comment, :placeholder=>'Your Comment..', :style=>"margin-left:2px;width:100%;height:55%" %>
+						<br>
+						<br>
+						<%= f.submit :value => 'Submit' %>
+		</div>
+
+		<br><br><br><br><br><br><br><br><br><br>
+				<p style="color:white;font-size:200%;">
+
+					CONTACT US:
+					<br>
+					E-mail:jobhunt@gmail.com
+					<br>
+					Phone number:9461045628
+
+		</p>
+
+	</body>
+	<% end %>
+</html>

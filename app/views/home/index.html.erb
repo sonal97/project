@@ -1,0 +1,106 @@
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title> JOBS </title>
+			<style>
+				a:link
+				{
+				text-decoration:none;
+				color:white;
+				font-family:Comic Sans MS;
+				}
+
+				a:hover
+				{
+				color:black;
+				font-family:Comic Sans MS;
+				}
+
+				a:visited
+				{
+				color:white;
+				font-family:Comic Sans MS;
+				}
+
+				#heading
+				{
+				font-family: Papyrus, fantasy;
+				margin-right:1200px;
+				}
+			</style>
+
+	</head>
+
+	<body>
+		<%= form_for :home do |f| %>
+			<div id="top" style="text-align:right;font-size:140%;background-color:#587CE5;padding:15px">
+				<a id="heading" style="color:white;font-size:180%"><b>JOBHUNT</b></a>
+				<%= link_to "HOME",{:action=>'index', :controller=>'home'} %>|
+				<%= link_to "REGISTER",{:action=>'new', :controller=>'users'} %>|
+				<%= link_to "LOGIN",{:action=>'index', :controller=>'login'} %>|
+				<%= link_to "CONTACT",{:action=>'index', :controller=>'feedback'} %>
+			</div>
+
+				<%=image_tag("jobcollage.jpg",:alt=> "error", :style=> "margin-top:15px;float:left;border:1px solid black;width:49%,height:700px")%>
+				<%=image_tag("job52.jpg", :alt => "error",:style=> "border:1px solid black;width:53.8%;height:400px")%>
+
+			<div style="height:150px;width:99.84%;background-color:#cecaca;border:1px solid #bfbdbd;">
+				<p style="font-size:270%;text-align:center;font-weight:100;">
+					<i>Explore millions of jobs....with just one search</i>
+				</p>
+			</div>
+
+		<%=image_tag("job50.jpg", :style=> "float:left;width:900px;height:527px;")%>
+
+		<div id="back" style="background-color:black;color:white;padding:55px;width:270px;height:400px;margin-left:954px">
+			<form>
+
+				<p style="font-size:20px">
+				*if already registered
+				</p>
+				<br>
+
+					JOB TITLE /KEYWORD<br>
+					<%= f.text_field :Skill, :placeholder=>'Keyword' %>
+						<br><br><br>
+
+					LOCATION <br>
+						<select name="location">
+							<option value="location"> LOCATION </option>
+							<option value="national"> NATIONAL </option>
+							<option value="international"> INTERNATIONAL </option>
+						</select>
+					<br><br><br>
+
+					SALARY <br>
+						<select name="salary">
+							<option value="salary"> SALARY </option>
+							<option value="less than 50k"> less than 50k </option>
+							<option value="50k"> 50k </option>
+							<option value="greater than 50k"> greater than 50k </option>
+						</select>
+					<br><br><br>
+
+					EXPERIENCE(IN YEARS)<br>
+						<select name="experience">
+							<option value="experience"> EXPERIENCE </option>
+							<option value="0"> 0 </option>
+							<option value="0-2"> 0-2 </option>
+							<option value="2-5"> 2-5 </option>
+							<option value="greater than 5"> greater than 5 </option>
+						</select>
+						<br><br>
+			</form>
+
+				<br>
+				<%= link_to image_tag("search.jpg",:style=>'width:90px;height:35px;'), {:action=>'search', :controller=>'home'} %>
+
+		</div>
+
+		<% end %>
+
+	</body>
+
+</html>

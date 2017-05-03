@@ -1,0 +1,53 @@
+<html>
+	<head>
+	
+	</head>
+	
+		<body>
+			<h1> Create Job Post ! </h1>
+			<%= form_for :post, url:{action: :"create"} do |f| %>
+			Name of company
+			<%= f.text_field :name, :style => 'margin-left:50px' %>
+			<br>
+			Description
+			<%= f.text_field :description, :style => 'margin-left:94px' %>
+			<br>
+			Nearest Landmark
+			<%= f.text_field :landmark, :style => 'margin-left:50px' %>
+			<br>
+			Sector
+			<%= f.text_field :sector, :style => 'margin-left:127px' %>
+			<br>
+			City
+			<%= f.text_field :city, :style => 'margin-left:140px' %>
+			<br>
+			State
+			<%= f.text_field :state, :style => 'margin-left:135px' %>
+			<br>
+			Country
+			<%= f.text_field :country, :style => 'margin-left:115px' %>
+			<br>
+			Pincode
+			<%= f.text_field :pincode, :style => 'margin-left:116px' %>
+			<br>
+			Experience Required
+			<%= f.text_field :experience, :style => 'margin-left:32px' %>
+			<br>
+			Salary
+  <%= f.text_field :salary, :style => 'margin-left:125px' %>
+  <br><br><br>
+  Expiry date (yyyy/mm/dd)
+  <%= f.text_field :expiry_date, :style => 'margin-left:48px' %>
+  <br><br><br><br>
+  Contact Information
+  <br>
+  Email
+  <%= f.text_field :email, :style => 'margin-left:110px' %>
+  <br>
+  Phone Number
+  <%= f.text_field :phone_no, :style => 'margin-left:52px' %>
+  <br><br>
+  <%= f.submit %>
+  <% end %>
+</body>
+</html>

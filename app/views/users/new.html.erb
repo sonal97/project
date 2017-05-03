@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title> REGISTER </title>
+
+		<style>
+				#pic
+				{
+				background: url(/assets/bg5.jpg);
+				background-repeat: no-repeat, repeat;
+				padding: 15px;
+				background-size:cover;
+				}
+
+				input[type=text], select
+				{
+				width: 60%;
+				padding: 12px 20px;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+				margin-top: 8px;
+				}
+
+				input[type=submit]
+				{
+				width: 60%;
+				background-color: #4CAF50;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				}
+
+				input[type=submit]:hover
+				{
+				background-color: #45a049;
+				}
+
+				#heading
+				{
+				font-family: Papyrus, fantasy;
+				margin-right:1100px;
+				}
+
+				a:link
+				{
+				text-decoration:none;
+				color:white;
+				font-family:Comic Sans MS;
+				}
+
+				a:hover
+				{
+				color:black;
+				font-family:Comic Sans MS;
+				}
+
+				a:visited
+				{
+				color:white;
+				font-family:Comic Sans MS;
+				}
+
+				div
+				{
+				border-radius: 5px;
+				background-color: #f2f2f2;
+				padding: 20px;
+				}
+			</style>
+
+	</head>
+
+	<body>
+
+	<%= form_for @user, :as => :user, url:{action: :"create"} do |f| %>
+		<div id="top" style="text-align:right;font-size:140%;background-color:#587CE5;padding:15px">
+			<a id="heading" style="color:white;font-size:180%"><b>JOBHUNT</b></a>
+			<%= link_to "HOME",{:action=>'index', :controller=>'home'} %>|
+			<%= link_to "REGISTER",{:action=>'new', :controller=>'users'} %>|
+			<%= link_to "LOGIN",{:action=>'index', :controller=>'login'} %>|
+			<%= link_to "CONTACT",{:action=>'index', :controller=>'feedback'} %>
+		</div>
+
+		<div id="pic" style="height:735px;width:1302px;">
+
+				<div style="height:847x;width:550px;">
+
+					<form>
+						<label for="name"> <u>NAME</u> </label>
+						<%= f.text_field :name, :placeholder=>'Your Name..', :style=>"margin-left:40px" %>
+						<br><br>
+
+						<u>ADDRESS</u>
+						<br><br>
+						<label for="hno"> H.no </label>
+						<%= f.text_field :h_no, :placeholder=>'Your house no..', :style=>"margin-left:53px" %>
+						<br>
+
+
+						<label for="sector"> Sector </label>
+						<%= f.text_field :sector, :placeholder=>'Your sector..', :style=>"margin-left:44px" %>
+						<br>
+
+
+						<label for="city"> City </label>
+						<%= f.text_field :city, :placeholder=>'Your City..', :style=>"margin-left:56px" %>
+						<br>
+
+						<label for="state"> State </label>
+						<%= f.text_field :state, :placeholder=>'Your state..', :style=>"margin-left:52px" %>
+						<br>
+
+						<label for="country"> Country </label>
+						<%= f.text_field :country, :placeholder=>'Your country..', :style=>"margin-left:32px" %>
+						<br>
+
+						<label for="pincode"> Pincode </label>
+						<%= f.text_field :pincode, :placeholder=>'Your pincode..', :style=>"margin-left:32px" %>
+						<br>
+
+
+						<label for="email"> <u>EMAIL</u> </label>
+						<%= f.text_field :email, :placeholder=>'Your email..', :style=>"margin-left:33px" %>
+						<br>
+
+						<label for="phoneno"> <u>PHONE NO</u> </label>
+						<%= f.text_field :phone_no, :placeholder=>'Your phone no..', :style=>"margin-left:4px" %>
+						<br><br>
+
+						<label for="password"> <u>PASSWORD</u> </label>
+						<%= f.password_field :password, :placeholder=>'Your password..', :id=>"password", :style=>"margin-left:2px" %>
+						<br><br>
+
+						<label for="confirm_password"> <u>CONFIRM PASSWORD</u> </label>
+						<%= f.password_field :password_confirmation, :placeholder=>'Confirm password..', :id=>"confirm_password", :style=>"margin-left:2px" %>
+						<br><br>
+
+						<%= f.submit(:submit, :value=>'Register') %>
+					</form>
+				</div>
+		</div>
+	</body>
+		<% end %>
+</html>

@@ -1,0 +1,37 @@
+<html>
+	<%= @posts.each do |f| %>
+	
+	<ol>
+		<li> 
+			<%= f.name %>
+			<br>
+			<%= f.description %>
+			<br>
+			Salary : <%= f.salary %>
+			<br>
+			Experience Required : <%= f.experience %>
+			<br>
+			<u>ADDRESS</u><br>
+			<br>
+			Nearest Landmark : <%= f.landmark %>
+			<br>
+			Sector : <% f.sector %>
+			<br>
+			City : <%= f.city %>
+			<br>
+			State : <%= f.state %>
+			<br>
+			<%= f.pincode %>
+			Country : <%= f.country %>
+			<br>
+			<u>CONTACT</u><br>
+			<br>
+			Email : <%= f.email %>
+			<br>
+			Phone Number : <%= f.phone_no %>
+		</li>
+    </ol>
+	
+	<% end %>
+
+</html>

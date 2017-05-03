@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<h1> JOBHUNT </h1>
+<br><br>
+<h3> Welcome to Admin panel </h3>
+<br><br>
+<div style = "width:90%;height:50%;border:1px grey solid">
+  <%= form_for @post do |f| %>
+  <ol>
+    <li> <%= @post.name %>
+        <%= @post.description %>
+        Salary : <%= @post.salary %>
+        Experience Required : <%= @post.experience %>
+        <br>
+        <u>ADDRESS</u><br>
+        Nearest Landmark : <%= @post.landmark %>
+        Sector : <% @post.sector %>
+        City : <%= @post.city %>
+        State : <%= @post.state %>
+        <%= @post.pincode %>
+        Country : <%= @post.country %>
+        <br>
+        <u>CONTACT</u><br>
+        Email : <%= @post.email %>
+        Phone Number : <%= @post.phone_no %>
+        <%= link_to "Delete",{ action: :destroy, id: @post.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+    </ol>
+</div>
+<% end %>
+<br>
+<%= link_to "Add", {:action => 'new', :controller => 'post'} %>
+</body>
+</html>
